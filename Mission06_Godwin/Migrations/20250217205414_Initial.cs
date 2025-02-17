@@ -37,9 +37,9 @@ namespace Mission06_Godwin.Migrations
                 columns: new[] { "MovieId", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[,]
                 {
-                    { 8, "Action", "Christopher Nolan", null, null, null, "PG-13", "The Dark Knight", 2008 },
-                    { 9, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Inception", 2010 },
-                    { 10, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Interstellar", 2014 }
+                    { 1, "Action", "Christopher Nolan", null, null, null, "PG-13", "The Dark Knight", 2008 },
+                    { 2, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Inception", 2010 },
+                    { 3, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Interstellar", 2014 }
                 });
         }
 

@@ -59,7 +59,7 @@ namespace Mission06_Godwin.Migrations
                     b.HasData(
                         new
                         {
-                            MovieId = 8,
+                            MovieId = 1,
                             Category = "Action",
                             Director = "Christopher Nolan",
                             Rating = "PG-13",
@@ -68,7 +68,7 @@ namespace Mission06_Godwin.Migrations
                         },
                         new
                         {
-                            MovieId = 9,
+                            MovieId = 2,
                             Category = "Sci-Fi",
                             Director = "Christopher Nolan",
                             Rating = "PG-13",
@@ -77,7 +77,7 @@ namespace Mission06_Godwin.Migrations
                         },
                         new
                         {
-                            MovieId = 10,
+                            MovieId = 3,
                             Category = "Sci-Fi",
                             Director = "Christopher Nolan",
                             Rating = "PG-13",
