@@ -11,8 +11,8 @@ using Mission06_Godwin.Models;
 namespace Mission06_Godwin.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20250214051659_UpdateMovieId")]
-    partial class UpdateMovieId
+    [Migration("20250217204527_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,7 @@ namespace Mission06_Godwin.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Notes")
+                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Rating")
@@ -57,6 +58,35 @@ namespace Mission06_Godwin.Migrations
                     b.HasKey("MovieId");
 
                     b.ToTable("Movies");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieId = 8,
+                            Category = "Action",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "The Dark Knight",
+                            Year = 2008
+                        },
+                        new
+                        {
+                            MovieId = 9,
+                            Category = "Sci-Fi",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "Inception",
+                            Year = 2010
+                        },
+                        new
+                        {
+                            MovieId = 10,
+                            Category = "Sci-Fi",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "Interstellar",
+                            Year = 2014
+                        });
                 });
 #pragma warning restore 612, 618
         }
