@@ -1,0 +1,9 @@
+﻿@model Movie // Gets the movie associated with this route
+
+<h1>Are you sure you want to delete @Model.Title from the database?</h1>
+
+<form method="post">
+	<input type="hidden" asp-for="MovieId" /> <!--Send back movie Id to delete-->
+	<button class="btn btn-danger" type="submit">Delete</button>
+	<a class="btn btn-info" asp-controller="Home" asp-action="MovieList">Cancel</a>
+</form>

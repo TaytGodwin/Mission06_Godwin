@@ -1,0 +1,38 @@
+﻿
+<h1>All Movies</h1>
+<table class="table table-striped table-bordered">
+	<thead class="table-dark">
+		<tr>
+			<th>Title</th>
+			<th>Year</th>
+			<th>Category</th>
+			<th>Director</th>
+			<th>Rating</th>
+			<th>Edited</th>
+			<th>Lent to</th>
+			<th>Copied to plex?</th>
+			<th>Notes</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tbody>
+			@foreach (var m in ViewBag.Movies)
+			{
+				<tr>
+					<td>@m.Title</td>
+					<td>@m.Year</td>
+					<td>@(((List<Category>)ViewBag.Categories).FirstOrDefault(c => c.CategoryId == m.CategoryId)?.CategoryName)</td> <!--Makes ViewBag.Majors a list and finds the matching major name for the id-->
+					<td>@m.Director</td>
+					<td>@m.Rating</td>
+					<td>@m.Edited</td>
+					<td>@m.LentTo</td>
+					<td>@m.CopiedToPlex</td>
+					<td>@m.Notes</td>
+					<td><a class="btn btn-info" asp-controller="Home" asp-action="EditMovie" asp-route-id="@m.MovieId">Edit</a></td> <!--Id will be passed in url-->
+					<td><a class="btn btn-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-id="@m.MovieId">Delete</a></td>
+				</tr>
+			}
+		</tbody>
+	</thead>
+
+</table>
