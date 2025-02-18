@@ -9,7 +9,7 @@
     <input type="hidden" asp-for="MovieId" /> <!--For updating the movies when sent to this page-->
 
     <label asp-for="Title">Title:</label>
-    <input asp-for="Title" required />
+    <input type="text" asp-for="Title" required />
     <br />
     <br />
 
@@ -51,14 +51,14 @@
     <br />    
     
     <label asp-for="CopiedToPlex">Has this movie been copied to Plex?</label><br />
-    <input type="radio" asp-for="CopiedToPlex" value="true" /> Yes<br />
-    <input type="radio" asp-for="CopiedToPlex" value="false" /> No
+    <input type="radio" asp-for="CopiedToPlex" value="true" required /> Yes<br />
+    <input type="radio" asp-for="CopiedToPlex" value="false" required /> No
     <br />
     <br />
 
     <label asp-for="Edited">Edited:</label><br />
-    <input type="radio" asp-for="Edited" value="true" /> Yes<br />
-    <input type="radio" asp-for="Edited" value="false"/> No
+    <input type="radio" asp-for="Edited" value="true" required /> Yes<br />
+    <input type="radio" asp-for="Edited" value="false" required /> No
     <br />
     <br />
 
