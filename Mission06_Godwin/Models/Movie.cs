@@ -25,12 +25,12 @@ namespace Mission06_Godwin.Models
         public string? Rating { get; set; }
 
         [Required(ErrorMessage = "Edited must be answered")]
-            public bool Edited { get; set; }
-        
+            public bool Edited { get; set; } = false;
+
         public string? LentTo { get; set; }
 
         [Required(ErrorMessage = "You must specify whether it has been copied to plex")]
-            public bool CopiedToPlex { get; set; }
+        public bool CopiedToPlex { get; set; } = false;
 
         [MaxLength(25)] // Max length matches in database as well as on form
             public string? Notes { get; set; }
