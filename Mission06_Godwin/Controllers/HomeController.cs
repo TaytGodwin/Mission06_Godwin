@@ -94,10 +94,22 @@ namespace Mission06_Godwin.Controllers
         [HttpPost]
         public IActionResult EditMovie(Movie updatedMovie)
         {
-            _context.Update(updatedMovie); // Update movie in database
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Update(updatedMovie); // Update movie in database
+                _context.SaveChanges();
 
-            return RedirectToAction("MovieList"); // Go back to list of movies
+                return RedirectToAction("MovieList"); // Go back to list of movies
+            }
+            else
+            {
+
+                ViewBag.Categories = _context.Categories // Need to get categories to send back to movie application form
+                    .OrderBy(x => x.CategoryName)
+                    .ToList();
+
+                return View("EnterMovie", updatedMovie);
+            }
         }
 
         // Delete get method to go to confirmation page
